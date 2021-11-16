@@ -1,0 +1,35 @@
+###################################
+### Determines Git Branch Name:
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+}
+
+###################################
+#### Checks Branch length, if >0 adds to terminal prompt
+
+export currentBranch=$(parse_git_branch)
+export currentBranchLength=${#currentBranch}
+
+if [[ $currentBranchLength -gt 0 ]]
+then
+  branch_phrase="on\[\e[35m\]$currentBranch:\[\e[0m\]"
+else
+  branch_phrase=""
+fi
+
+####################################
+#### Sets title of bash prompt + adds some colors around various phrases 
+export PS1="\[\e[32m\]working at\[\e[0m\]: \[\e[36m\] \w \[\e[0m\]$branch_phrase \n"
+
+# to edit terminal staying check out this post: https://medium.com/@adamtowers/how-to-customize-your-terminal-and-bash-profile-from-scratch-9ab079256380
+# git branch from: https://coderwall.com/p/fasnya/add-git-branch-name-to-bash-prompt 
+
+
+
+#################################################
+### Makes CDLS Method
+
+cdls() {
+        cd "$@" && ls;
+}
