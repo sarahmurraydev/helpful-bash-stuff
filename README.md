@@ -5,10 +5,10 @@ I know bash is old news and `.zsh` is the latest and greatest more powerful comm
 The follow file (`useful-bash-profile`) will get your terminal window looking like: 
 
 ### General Terminal Look:
-![image](./images/terminal-look)
+![terminal-window](./images/terminal-look.png)
 
 ### IntelliJ Look: 
-![image](./images/intelliJ-look)
+![intelliJ-terminal-window](./images/intelliJ-look.png)
 
 ### Android Studio Look:
-![image](./images/android-studio-look)
+![android-studio-terminal-window](./images/android-studio-look.png)
